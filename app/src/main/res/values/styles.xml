@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-
+    <declare-styleable name="RainView">
+        <attr name="background_color" format="integer"/>
+    </declare-styleable>
 
 </resources>

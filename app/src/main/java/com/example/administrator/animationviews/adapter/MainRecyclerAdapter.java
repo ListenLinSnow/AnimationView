@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.administrator.animationviews.R;
@@ -29,7 +30,7 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MainRecyclerViewHolder(LayoutInflater.from(context).inflate(R.layout.view_recycler_item, parent, false));
+        return new MainRecyclerViewHolder(LayoutInflater.from(context).inflate(R.layout.view_recycler_item, parent, false), onItemClickListener);
     }
 
     @Override
@@ -44,18 +45,20 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter {
 
     class MainRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @BindView(R.id.view_recycler_item_info_tv)
+        @BindView(R.id.view_main_recycler_item_view)
+        RelativeLayout view;
+        @BindView(R.id.view_main_recycler_item_info_tv)
         TextView infoTv;
 
         private OnItemClickListener onItemClickListener;
 
-        public MainRecyclerViewHolder(View itemView) {
+        public MainRecyclerViewHolder(View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
             ButterKnife.bind(this, itemView);
 
             this.onItemClickListener = onItemClickListener;
 
-            infoTv.setOnClickListener(this);
+            view.setOnClickListener(this);
         }
 
         @Override
