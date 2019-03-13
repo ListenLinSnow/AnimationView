@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements MainRecyclerAdapt
 
         activityList.add(RainActivity.class);
         infoList.add("下雨动画");
+
+        activityList.add(SnowActivity.class);
+        infoList.add("下雪动画");
     }
 
     @Override

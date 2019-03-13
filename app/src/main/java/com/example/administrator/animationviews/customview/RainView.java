@@ -41,7 +41,7 @@ public class RainView extends View {
     int cloudWidth = 300;               //设置云朵的宽度与厚度
     int cloudHeight = 100;
     int cloudTranslate = 50;            //设置云朵动画过程中的最大平移距离
-    float cloudScale = 0.8f;
+    float cloudScale = 0.8f;            //设置右边云朵的缩放比例
 
     ValueAnimator leftCloudAnimator;    //设置左边云朵的属性动画
     float leftCloudAnimatorValue;
@@ -50,8 +50,8 @@ public class RainView extends View {
     Timer rainTimer;                    //雨滴的生成计时器
     int rainDropPeriod = 200;           //创建雨滴的间隔
 
-    int rainDropLength = 60;
-    int rainDropSpeed = 10;
+    int rainDropLength = 60;            //雨滴的长度
+    int rainDropSpeed = 10;             //雨滴的速度
     int rainDropDegree = 75;            //雨滴的斜角角度
     int maxRainSize = 20;               //雨滴最大数量
 
